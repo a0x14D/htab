@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="robots" content="noindex">
+    <title>Redirecting… · Hacker New Tab</title>
+    <style>
+        html, body { height: 100%; margin: 0; }
+        body {
+            background: #0d1117;
+            color: #c9d1d9;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            display: grid;
+            place-items: center;
+        }
+        .box { max-width: 34rem; padding: 2rem; text-align: center; }
+        .prompt { color: #3fb950; }
+        .sub { color: #6e7681; font-size: 12px; margin-top: 1rem; }
+        a { color: #58a6ff; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p><span class="prompt">$</span> resolving <span id="path">…</span></p>
+        <p class="sub">
+            Taking you to the right place.
+            <a id="home" href="/htab/">Open the dashboard</a> if nothing happens.
+        </p>
+    </div>
+
+    <script>
+        // GitHub Pages serves this file for any unknown path, keeping the
+        // original URL. Turn /htab/<name> into /htab/?go=<name> so app.js can
+        // resolve it to a tile (or fall back to a web search).
+        (function () {
+            var path = location.pathname;
+            var isProjectSite = /^\/htab(\/|$)/.test(path);
+            var base = isProjectSite ? "/htab/" : "/";
+            var slug = path
+                .replace(isProjectSite ? /^\/htab\/?/ : /^\//, "")
+                .replace(/^\/+|\/+$/g, "");
+
+            // Never bounce the 404 page to itself.
+            if (slug === "404.html") slug = "";
+
+            var url = slug ? base + "?go=" + encodeURIComponent(slug) : base;
+            document.getElementById("path").textContent = slug || "/";
+            document.getElementById("home").href = base;
+            location.replace(url);
+        })();
+    </script>
+</body>
+</html>
