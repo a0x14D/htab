@@ -7,12 +7,14 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "deploy": "npm run build && wrangler deploy",
     "sass:build": "sass assets/scss/main.scss assets/css/main.css",
     "sass:watch": "sass --watch assets/scss/main.scss assets/css/main.css",
     "sass:build:prod": "sass assets/scss/main.scss assets/css/main.css --style=compressed"
   },
   "devDependencies": {
     "sass": "^1.69.0",
-    "vite": "^8.3.5"
+    "vite": "^8.3.5",
+    "wrangler": "^4.152.0"
   }
 }
