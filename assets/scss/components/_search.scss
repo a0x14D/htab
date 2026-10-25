@@ -1,0 +1,73 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+/* Search bar */
+.search-shell {
+  position: relative;
+  border: 1px solid $border-primary;
+  background: rgba($bg-secondary, 0.85);
+  border-radius: $radius-lg;
+  @include transition(border-color, box-shadow);
+}
+
+.search-shell:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px rgba(var(--accent-rgb), 0.2), 0 0 24px -10px rgba(var(--accent-rgb), 0.7);
+}
+
+.search-input {
+  background: transparent;
+}
+
+.search-input::placeholder {
+  color: $text-tertiary;
+}
+
+/* The $ prompt is decorative */
+.search-prompt {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  padding-left: $space-lg;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+/* The scratchpad toggle is pinned to the shell's right edge */
+.search-action {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 $space-lg;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  color: $text-tertiary;
+  @include transition(color);
+}
+
+.search-action:hover,
+.search-action:focus-visible {
+  color: var(--accent);
+  outline: none;
+}
+
+/* Scratchpad toggle shows a dot when tasks are open */
+#notes-toggle.has-todos::after {
+  content: "";
+  position: absolute;
+  top: 0.6rem;
+  right: 0.75rem;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: $radius-full;
+  background: var(--accent);
+  box-shadow: 0 0 6px rgba(var(--accent-rgb), 0.9);
+  pointer-events: none;
+}

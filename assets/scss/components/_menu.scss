@@ -1,0 +1,26 @@
+@use '../abstracts/variables' as *;
+
+/* Command dropdown */
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: $space-md;
+  padding: 0.7rem $space-lg;
+  cursor: pointer;
+  color: $text-primary;
+  border-left: 2px solid transparent;
+}
+
+.menu-item:hover,
+.menu-item.selected {
+  background: $bg-secondary;
+  color: var(--accent);
+  border-left-color: var(--accent);
+}
+
+/* Keep long utility/pivot lists inside the viewport */
+#search-dropdown {
+  max-height: min(24rem, 60vh);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}

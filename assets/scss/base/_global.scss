@@ -1,0 +1,57 @@
+@use '../abstracts/variables' as *;
+
+:root {
+  --accent: #{$accent};
+  --accent-rgb: #{$accent-rgb};
+}
+
+body {
+  font-family: $font-mono;
+  background-color: $bg-primary;
+  color: $text-primary;
+  background-image:
+    radial-gradient(ellipse at 50% -10%, rgba(var(--accent-rgb), 0.14), transparent 55%),
+    linear-gradient(rgba(var(--accent-rgb), 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--accent-rgb), 0.05) 1px, transparent 1px);
+  background-size: auto, 44px 44px, 44px 44px;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.07) 0px, rgba(0, 0, 0, 0.07) 1px, transparent 1px, transparent 3px);
+  pointer-events: none;
+  z-index: 50;
+}
+
+::selection {
+  background: rgba(var(--accent-rgb), 0.4);
+}
+
+.terminal-glow {
+  text-shadow: 0 0 8px rgba(var(--accent-rgb), 0.45);
+}
+
+.accent-text {
+  color: var(--accent);
+}
+
+/* Reduced-effects mode (:theme) */
+body.no-fx::before {
+  display: none;
+}
+
+body.no-fx {
+  background-image: none;
+}
+
+body.no-fx .terminal-glow {
+  text-shadow: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

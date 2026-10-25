@@ -1,0 +1,130 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+/* Flaticon UIcons */
+.dev-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  flex: none;
+}
+
+.dev-icon i {
+  font-size: 1.75rem;
+  line-height: 1;
+  color: $text-secondary;
+  transition: color 0.15s ease;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45));
+}
+
+.dev-icon.dev-icon-menu {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.dev-icon.dev-icon-menu i {
+  font-size: 1.125rem;
+}
+
+@include media-sm {
+  .dev-icon:not(.dev-icon-menu) {
+    width: 2rem;
+    height: 2rem;
+  }
+  .dev-icon:not(.dev-icon-menu) i {
+    font-size: 2rem;
+  }
+}
+
+/* Brand colors on hover */
+.link-card:hover .dev-icon i,
+.menu-item:hover .dev-icon i {
+  color: var(--accent);
+}
+
+.link-card:hover .dev-icon i.fi-brands-github,
+.menu-item:hover .dev-icon i.fi-brands-github {
+  color: #f0f6fc;
+}
+
+.link-card:hover .dev-icon i.fi-brands-youtube,
+.menu-item:hover .dev-icon i.fi-brands-youtube {
+  color: #ff0000;
+}
+
+.link-card:hover .dev-icon i.fi-brands-reddit,
+.menu-item:hover .dev-icon i.fi-brands-reddit {
+  color: #ff4500;
+}
+
+.link-card:hover .dev-icon i.fi-brands-discord,
+.menu-item:hover .dev-icon i.fi-brands-discord {
+  color: #5865f2;
+}
+
+.link-card:hover .dev-icon i.fi-brands-instagram,
+.menu-item:hover .dev-icon i.fi-brands-instagram {
+  color: #e4405f;
+}
+
+.link-card:hover .dev-icon i.fi-brands-whatsapp,
+.menu-item:hover .dev-icon i.fi-brands-whatsapp {
+  color: #25d366;
+}
+
+.link-card:hover .dev-icon i.fi-brands-twitter,
+.menu-item:hover .dev-icon i.fi-brands-twitter {
+  color: #1da1f2;
+}
+
+.link-card:hover .dev-icon i.fi-brands-linkedin,
+.menu-item:hover .dev-icon i.fi-brands-linkedin {
+  color: #0a66c2;
+}
+
+.link-card:hover .dev-icon i.fi-brands-facebook,
+.menu-item:hover .dev-icon i.fi-brands-facebook {
+  color: #1877f2;
+}
+
+.link-card:hover .dev-icon i.fi-brands-google,
+.menu-item:hover .dev-icon i.fi-brands-google {
+  color: #4285f4;
+}
+
+.link-card:hover .dev-icon i.fi-brands-gitlab,
+.menu-item:hover .dev-icon i.fi-brands-gitlab {
+  color: #fc6d26;
+}
+
+.link-card:hover .dev-icon i.fi-brands-npm,
+.menu-item:hover .dev-icon i.fi-brands-npm {
+  color: #cb3837;
+}
+
+.link-card:hover .dev-icon i.fi-brands-stack-overflow,
+.menu-item:hover .dev-icon i.fi-brands-stack-overflow {
+  color: #f58025;
+}
+
+.link-card:hover .dev-icon i.fi-brands-firefox-browser,
+.menu-item:hover .dev-icon i.fi-brands-firefox-browser {
+  color: #ff7139;
+}
+
+.link-card:hover .dev-icon i.fi-brands-medium,
+.menu-item:hover .dev-icon i.fi-brands-medium {
+  color: #ffffff;
+}
+
+.link-card:hover .dev-icon i.fi-rr-calendar,
+.menu-item:hover .dev-icon i.fi-rr-calendar {
+  color: #4285f4;
+}
+
+.link-card:hover .dev-icon i.fi-rr-marker,
+.menu-item:hover .dev-icon i.fi-rr-marker {
+  color: #ea4335;
+}
