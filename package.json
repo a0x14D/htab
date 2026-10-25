@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "deploy": "npm run build && wrangler deploy",
-    "sass:build": "sass assets/scss/main.scss assets/css/main.css",
+    "sass:build": "sass assets/scss/main.scss assets/css/main.css --style=compressed",
     "sass:watch": "sass --watch assets/scss/main.scss assets/css/main.css",
     "sass:build:prod": "sass assets/scss/main.scss assets/css/main.css --style=compressed"
   },

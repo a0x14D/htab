@@ -41,7 +41,7 @@ npm run preview  # Preview production build
 
 ## SASS
 ```bash
-npm run sass:build       # Compile once
+npm run sass:build       # Compile once (compressed, matches committed CSS)
 npm run sass:watch       # Watch mode
 npm run sass:build:prod  # Compressed
 ```
