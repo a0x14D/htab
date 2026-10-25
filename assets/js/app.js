@@ -2465,6 +2465,12 @@ window.addEventListener("keydown", (e) => {
         return;
     }
 
+    if (key === "?") {
+        e.preventDefault();
+        showToast(":mode :order :reset-order :pin :unpin :pins :link :todo :note :clear-history :theme :help :reload");
+        return;
+    }
+
     switch (e.key) {
         case "1":
             switchMode("personal");
