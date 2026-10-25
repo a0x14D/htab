@@ -27,6 +27,7 @@ htab/
 ├── index.html
 ├── package.json
 ├── vite.config.js
+├── wrangler.jsonc        # Cloudflare static asset deploy config
 └── README.md
 ```
 
@@ -44,6 +45,29 @@ npm run sass:build       # Compile once
 npm run sass:watch       # Watch mode
 npm run sass:build:prod  # Compressed
 ```
+
+## Branches & Deploy
+- `dev` — working branch; commit work here.
+- `master` — default branch; Cloudflare builds from this one.
+
+Keep both branches in lockstep with a fast-forward merge:
+
+```bash
+git checkout dev
+# ...work...
+git add -A && git commit -m "..."
+
+git checkout master
+git merge --ff-only dev        # fails if master diverged - fix that first
+git push origin master
+
+git checkout dev
+git push origin dev
+```
+
+Use `--ff-only` so `master` only ever moves forward to the same commit as `dev` — no merge commits, no drift.
+
+Deployment runs `npm run build` then `npx wrangler deploy`; `wrangler.jsonc` uploads `dist/` as static assets, so no Worker script or Cloudflare Vite plugin is involved. To deploy manually, run `npm run deploy`. See [Deployment](DEPLOYMENT.md) for details.
 
 ## Development Notes
 - **ES Modules**: `app.js` and modules use `import`/`export`. Loaded as `<script type="module">`.
