@@ -1,0 +1,32 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+/* Toast */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  transform: translate(-50%, 1rem);
+  background: $bg-secondary;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: $space-sm $space-lg;
+  border-radius: $radius-md;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  opacity: 0;
+  pointer-events: none;
+  @include transition(opacity, transform);
+  z-index: 100;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+@media (max-width: $breakpoint-sm) {
+  .toast {
+    bottom: 4.5rem;
+  }
+}

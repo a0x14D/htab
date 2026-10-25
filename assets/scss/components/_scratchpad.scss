@@ -1,0 +1,176 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+/* Scratchpad */
+.scratchpad textarea {
+  width: 100%;
+  min-height: 7rem;
+  background: $bg-primary;
+  border: 1px solid $border-primary;
+  border-radius: $radius-lg;
+  padding: $space-md $space-lg;
+  color: $text-primary;
+  font-family: inherit;
+  font-size: 0.875rem;
+  resize: vertical;
+}
+
+.scratchpad textarea:focus {
+  @include focus-ring;
+}
+
+.scratchpad textarea::placeholder {
+  color: $text-muted;
+}
+
+/* Scratchpad tabs */
+.scratchpad-tab {
+  padding: 0.15rem 0.55rem;
+  border: 1px solid $border-primary;
+  border-radius: $radius-md;
+  color: $text-secondary;
+  background: transparent;
+  cursor: pointer;
+  @include transition(color, border-color, background);
+}
+
+.scratchpad-tab:hover {
+  color: $text-primary;
+  border-color: $text-muted;
+}
+
+.scratchpad-tab[aria-selected="true"] {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(var(--accent-rgb), 0.08);
+}
+
+/* Todo list */
+.todo-input {
+  background: $bg-primary;
+  border: 1px solid $border-primary;
+  border-radius: $radius-lg;
+  padding: $space-sm 0.85rem;
+  color: $text-primary;
+  font-family: inherit;
+  font-size: 0.875rem;
+}
+
+.todo-input:focus {
+  @include focus-ring;
+}
+
+.todo-input::placeholder {
+  color: $text-muted;
+}
+
+.todo-add {
+  flex: 0 0 auto;
+  width: 2.25rem;
+  height: 2.25rem;
+  @include flex-center;
+  border: 1px solid $border-primary;
+  border-radius: $radius-lg;
+  color: $text-secondary;
+  font-size: 1.1rem;
+  line-height: 1;
+  background: transparent;
+  cursor: pointer;
+  @include transition(color, border-color, background);
+}
+
+.todo-add:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(var(--accent-rgb), 0.08);
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: $space-xs;
+}
+
+.todo-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.4rem $space-sm;
+  border: 1px solid transparent;
+  border-radius: $radius-md;
+  @include transition(background, border-color);
+}
+
+.todo-row:hover {
+  background: rgba(var(--accent-rgb), 0.05);
+  border-color: $border-secondary;
+}
+
+.todo-check {
+  flex: 0 0 auto;
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.1rem;
+  @include flex-center;
+  border: 1px solid $text-muted;
+  border-radius: $radius-sm;
+  color: $bg-primary;
+  font-size: 0.8rem;
+  line-height: 1;
+  cursor: pointer;
+  background: transparent;
+  @include transition(all);
+}
+
+.todo-check:hover {
+  border-color: var(--accent);
+}
+
+.todo-check[aria-checked="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.todo-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: 0.875rem;
+  color: $text-primary;
+  word-break: break-word;
+}
+
+.todo-row.done .todo-text {
+  color: $text-muted;
+  text-decoration: line-through;
+}
+
+.todo-del {
+  flex: 0 0 auto;
+  width: 1.4rem;
+  height: 1.4rem;
+  @include flex-center;
+  border: none;
+  border-radius: $radius-sm;
+  background: transparent;
+  color: $text-muted;
+  font-size: 0.85rem;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0;
+  @include transition(opacity, color);
+}
+
+.todo-row:hover .todo-del,
+.todo-del:focus-visible {
+  opacity: 1;
+}
+
+.todo-del:hover {
+  color: $danger;
+}
+
+@media (hover: none) {
+  .todo-del {
+    opacity: 0.6;
+  }
+}

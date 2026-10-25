@@ -10,15 +10,16 @@ const MODES = {
         accentRgb: "63, 185, 80",
         defaultEngine: "ddg",
         links: [
-            { name: "Gmail", url: "https://mail.google.com", icon: "✉️", devIcon: "Gmail" },
+            { name: "Gmail", url: "https://mail.google.com", icon: "✉️", flaticonIcon: "fi fi-brands-google" },
             { name: "ProtonMail", url: "https://mail.proton.me", icon: "🔒" },
-            { name: "Calendar", url: "https://calendar.google.com", icon: "📅" },
-            { name: "Maps", url: "https://maps.google.com", icon: "🗺️" },
-            { name: "WhatsApp", url: "https://web.whatsapp.com", icon: "💬", devIcon: "WhatsApp" },
-            { name: "YouTube", url: "https://youtube.com", icon: "📺", devIcon: "YouTube" },
-            { name: "Instagram", url: "https://instagram.com", icon: "📸", devIcon: "Instagram" },
-            { name: "Reddit", url: "https://reddit.com", icon: "🤖", devIcon: "Reddit" },
-            { name: "Discord", url: "https://discord.com", icon: "💬", devIcon: "Discord" }
+            { name: "Calendar", url: "https://calendar.google.com", icon: "📅", flaticonIcon: "fi fi-rr-calendar" },
+            { name: "Maps", url: "https://maps.google.com", icon: "🗺️", flaticonIcon: "fi fi-rr-marker" },
+            { name: "WhatsApp", url: "https://web.whatsapp.com", icon: "💬", flaticonIcon: "fi fi-brands-whatsapp" },
+            { name: "YouTube", url: "https://youtube.com", icon: "📺", flaticonIcon: "fi fi-brands-youtube" },
+            { name: "Instagram", url: "https://instagram.com", icon: "📸", flaticonIcon: "fi fi-brands-instagram" },
+            { name: "Reddit", url: "https://reddit.com", icon: "🤖", flaticonIcon: "fi fi-brands-reddit" },
+            { name: "Discord", url: "https://discord.com", icon: "💬", flaticonIcon: "fi fi-brands-discord" },
+            { name: "YTMusic", url: "https://music.youtube.com", icon: "🎵" }
         ]
     },
     research: {
@@ -29,7 +30,7 @@ const MODES = {
         pivot: true,
         dorks: ["site:", "inurl:", "intitle:", "intext:", "filetype:pdf", "filetype:sql", "-inurl:", "ext:log"],
         links: [
-            { name: "Google", url: "https://google.com", icon: "🔍", devIcon: "Google" },
+            { name: "Google", url: "https://google.com", icon: "🔍", flaticonIcon: "fi fi-brands-google" },
             { name: "Shodan", url: "https://shodan.io", icon: "🌐" },
             { name: "VirusTotal", url: "https://virustotal.com", icon: "🛡️" },
             { name: "urlscan.io", url: "https://urlscan.io", icon: "🔬" },
@@ -45,14 +46,14 @@ const MODES = {
         accentRgb: "88, 166, 255",
         defaultEngine: "ddg",
         links: [
-            { name: "GitHub", url: "https://github.com", icon: "🐙", devIcon: "GitHubDark" },
-            { name: "Stack Overflow", url: "https://stackoverflow.com", icon: "💬" },
-            { name: "MDN Docs", url: "https://developer.mozilla.org", icon: "📖", devIcon: "Mozilla" },
+            { name: "GitHub", url: "https://github.com", icon: "🐙", flaticonIcon: "fi fi-brands-github" },
+            { name: "Stack Overflow", url: "https://stackoverflow.com", icon: "💬", flaticonIcon: "fi fi-brands-stack-overflow" },
+            { name: "MDN Docs", url: "https://developer.mozilla.org", icon: "📖", flaticonIcon: "fi fi-brands-firefox-browser" },
             { name: "DevDocs", url: "https://devdocs.io", icon: "📚" },
-            { name: "npm", url: "https://www.npmjs.com", icon: "📦", devIcon: "NPM" },
+            { name: "npm", url: "https://www.npmjs.com", icon: "📦", flaticonIcon: "fi fi-brands-npm" },
             { name: "Regex101", url: "https://regex101.com", icon: "🧪" },
             { name: "Can I use", url: "https://caniuse.com", icon: "🧷" },
-            { name: "Medium", url: "https://medium.com", icon: "✍️" },
+            { name: "Medium", url: "https://medium.com", icon: "✍️", flaticonIcon: "fi fi-brands-medium" },
             { name: "The Hacker News", url: "https://thehackernews.com", icon: "📰" }
         ]
     },
@@ -69,19 +70,19 @@ const MODES = {
             { name: "PortSwigger", url: "https://portswigger.net/web-security", icon: "🧪" },
             { name: "CTF Sites", url: "https://ctfsites.github.io/", icon: "📚" },
             { name: "CyberChef", url: "https://gchq.github.io/CyberChef/", icon: "🧰" },
-            { name: "RevShells", url: "https://www.revshells.com", icon: "🐚", devIcon: "Bash" },
-            { name: "GTFOBins", url: "https://gtfobins.github.io", icon: "🐧", devIcon: "Linux" },
-            { name: "PayloadsAllTheThings", url: "https://github.com/swisskyrepo/PayloadsAllTheThings", icon: "💥", devIcon: "GitHubDark" }
+            { name: "RevShells", url: "https://www.revshells.com", icon: "🐚" },
+            { name: "GTFOBins", url: "https://gtfobins.github.io", icon: "🐧" },
+            { name: "PayloadsAllTheThings", url: "https://github.com/swisskyrepo/PayloadsAllTheThings", icon: "💥", flaticonIcon: "fi fi-brands-github" }
         ]
     }
 };
 
 const SEARCH_ENGINES = [
     { name: "DuckDuckGo", urlTemplate: "https://duckduckgo.com/?q={{Q}}", shortcut: "ddg", icon: "🦆" },
-    { name: "Google", urlTemplate: "https://www.google.com/search?q={{Q}}", shortcut: "google", icon: "🔍", devIcon: "Google" },
+    { name: "Google", urlTemplate: "https://www.google.com/search?q={{Q}}", shortcut: "google", icon: "🔍", flaticonIcon: "fi fi-brands-google" },
     { name: "Shodan", urlTemplate: "https://www.shodan.io/search?query={{Q}}", shortcut: "shodan", icon: "🌐" },
     { name: "VirusTotal", urlTemplate: "https://www.virustotal.com/gui/search?query={{Q}}", shortcut: "vt", icon: "🛡️" },
-    { name: "GitHub", urlTemplate: "https://github.com/search?q={{Q}}", shortcut: "gh", icon: "🐙", devIcon: "GitHubDark" },
+    { name: "GitHub", urlTemplate: "https://github.com/search?q={{Q}}", shortcut: "gh", icon: "🐙", flaticonIcon: "fi fi-brands-github" },
     { name: "Exploit-DB", urlTemplate: "https://www.exploit-db.com/search?q={{Q}}", shortcut: "edb", icon: "⚡" }
 ];
 
@@ -1106,6 +1107,8 @@ const COMMAND_ACTIONS = [
     { name: "note", icon: "📝", hint: "[text]", detail: "Read or append to the scratchpad" },
     { name: "clear-history", icon: "🗑️", hint: "", detail: "Forget recent searches" },
     { name: "theme", icon: "🎨", hint: "", detail: "Toggle scanlines and glow" },
+    { name: "export", icon: "💾", hint: "", detail: "Export backup (todos, notes, links)" },
+    { name: "import", icon: "📥", hint: "", detail: "Import backup from JSON" },
     { name: "help", icon: "❓", hint: "", detail: "Show all command actions" },
     { name: "reload", icon: "🔄", hint: "", detail: "Reload the dashboard" }
 ];
@@ -1405,6 +1408,43 @@ function runCommand(name, args) {
             window.location.reload();
             return;
 
+        case "export":
+            import('./modules/backup.js').then(({ exportAll }) => {
+                if (exportAll()) {
+                    showToast("Backup exported");
+                } else {
+                    showToast("Export failed");
+                }
+            }).catch(() => showToast("Export failed"));
+            closeMenu();
+            searchInput.value = "";
+            return;
+
+        case "import": {
+            import('./modules/backup.js').then(({ createImportInput, importAll }) => {
+                const input = createImportInput();
+                input.onchange = async (e) => {
+                    const file = e.target.files[0];
+                    if (!file) {
+                        document.body.removeChild(input);
+                        return;
+                    }
+                    try {
+                        await importAll(file);
+                        showToast("Backup imported — reloading...");
+                        setTimeout(() => window.location.reload(), 800);
+                    } catch (err) {
+                        showToast("Import failed");
+                    }
+                    document.body.removeChild(input);
+                };
+                input.click();
+            }).catch(() => showToast("Import failed"));
+            closeMenu();
+            searchInput.value = "";
+            return;
+        }
+
         default: {
             // ":" on its own is harmless; anything else is a real miss.
             showToast(
@@ -1489,20 +1529,50 @@ function inferDevIcon(url) {
 }
 
 function devIconNameFor(link) {
-    return link.devIcon || inferDevIcon(link.url);
+    return link.flaticonIcon || link.devIcon || inferFlaticonIcon(link.url);
+}
+
+function inferFlaticonIcon(url) {
+    let host;
+    try {
+        host = new URL(url).hostname.toLowerCase().replace(/^www\./, "");
+    } catch (error) {
+        return "";
+    }
+    const FLATICON_MAP = new Map([
+        ["github.com", "fi fi-brands-github"],
+        ["gist.github.com", "fi fi-brands-github"],
+        ["youtube.com", "fi fi-brands-youtube"],
+        ["youtu.be", "fi fi-brands-youtube"],
+        ["reddit.com", "fi fi-brands-reddit"],
+        ["discord.com", "fi fi-brands-discord"],
+        ["discord.gg", "fi fi-brands-discord"],
+        ["instagram.com", "fi fi-brands-instagram"],
+        ["whatsapp.com", "fi fi-brands-whatsapp"],
+        ["web.whatsapp.com", "fi fi-brands-whatsapp"],
+        ["wa.me", "fi fi-brands-whatsapp"],
+        ["mail.google.com", "fi fi-brands-google"],
+        ["npmjs.com", "fi fi-brands-npm"],
+        ["developer.mozilla.org", "fi fi-brands-firefox-browser"],
+        ["mozilla.org", "fi fi-brands-firefox-browser"],
+        ["google.com", "fi fi-brands-google"],
+        ["twitter.com", "fi fi-brands-twitter"],
+        ["x.com", "fi fi-brands-twitter"],
+        ["linkedin.com", "fi fi-brands-linkedin"],
+        ["facebook.com", "fi fi-brands-facebook"],
+        ["stackoverflow.com", "fi fi-brands-stack-overflow"],
+        ["medium.com", "fi fi-brands-medium"],
+        ["gitlab.com", "fi fi-brands-gitlab"]
+    ]);
+    return FLATICON_MAP.get(host) || "";
 }
 
 /**
- * Render a tile/menu icon. Uses the SVG icon set when it is loaded and has a
- * mapping; otherwise falls back to the emoji, which needs no network at all.
+ * Render a tile/menu icon using Flaticon UIcons.
  */
-function iconMarkup(emoji, devIconName, emojiClass = "", devClass = "dev-icon") {
-    const registry = window.devIcons;
-    if (registry && devIconName) {
-        const svg = registry.svg(devIconName, 24);
-        if (svg) {
-            return `<span class="${devClass}" aria-hidden="true">${svg}</span>`;
-        }
+function iconMarkup(emoji, flaticonClass, emojiClass = "", devClass = "dev-icon") {
+    if (flaticonClass) {
+        return `<span class="${devClass}" aria-hidden="true"><i class="${flaticonClass}"></i></span>`;
     }
     return `<span class="${emojiClass}" aria-hidden="true">${emoji}</span>`;
 }
@@ -1541,7 +1611,7 @@ function renderLinks() {
                   role="button" tabindex="0" aria-pressed="${pinned}"
                   aria-label="${pinned ? "Unpin" : "Pin"} ${escapeHtml(link.name)}">${pinned ? "★" : "☆"}</span>
             ${removeBtn}
-            ${iconMarkup(link.icon, devIconNameFor(link), "text-3xl sm:text-4xl leading-none")}
+            ${iconMarkup(link.icon, devIconNameFor(link), "text-3xl sm:text-4xl leading-none", "dev-icon flaticon-icon")}
             <span class="link-name text-[11px] sm:text-xs font-bold text-gray-300 leading-tight break-words max-w-full transition-colors">${escapeHtml(link.name)}</span>
         </a>`;
         })
@@ -1794,7 +1864,7 @@ function renderMenu() {
 
             if (item.type === "command") {
                 return row(
-                    menuIcon(item.icon, item.devIcon),
+                    menuIcon(item.icon, item.flaticonIcon || item.devIcon),
                     `${escapeHtml(item.label)} <span class="font-normal text-gray-500">${
                         item.hint ? escapeHtml(item.hint) : ""
                     }</span>`,
@@ -1805,7 +1875,7 @@ function renderMenu() {
 
             if (item.type === "engine") {
                 return row(
-                    menuIcon(item.engine.icon, item.engine.devIcon),
+                    menuIcon(item.engine.icon, item.engine.flaticonIcon || item.engine.devIcon),
                     escapeHtml(item.engine.name),
                     "",
                     `@${escapeHtml(item.engine.shortcut)}`
@@ -2345,13 +2415,29 @@ window.addEventListener("keydown", (e) => {
         return;
     }
 
-    if (e.key.toLowerCase() === "n") {
+    const key = e.key.toLowerCase();
+
+    if (key === "n") {
         e.preventDefault();
         toggleScratchpad();
         return;
     }
 
-    if (e.key.toLowerCase() === "s") {
+    if (key === "t") {
+        e.preventDefault();
+        toggleScratchpad();
+        setScratchpadTab("todos");
+        return;
+    }
+
+    if (key === "m") {
+        e.preventDefault();
+        toggleScratchpad();
+        setScratchpadTab("notes");
+        return;
+    }
+
+    if (key === "s") {
         e.preventDefault();
         setTileOrder(tileOrder === "frecency" ? "default" : "frecency");
         renderLinks();
@@ -2359,9 +2445,29 @@ window.addEventListener("keydown", (e) => {
         return;
     }
 
-    if (e.key.toLowerCase() === "q") {
+    if (key === "q") {
         e.preventDefault();
         openDuckAi();
+        return;
+    }
+
+    if (key === "g") {
+        e.preventDefault();
+        openLink("https://github.com/a0x14D/htab");
+        showToast("Opening GitHub...");
+        return;
+    }
+
+    if (key === "x") {
+        e.preventDefault();
+        openLink("https://github.com/a0x14D/htab/stargazers");
+        showToast("Star on GitHub");
+        return;
+    }
+
+    if (key === "?") {
+        e.preventDefault();
+        showToast(":mode :order :reset-order :pin :unpin :pins :link :todo :note :clear-history :theme :help :reload");
         return;
     }
 
@@ -2379,7 +2485,6 @@ window.addEventListener("keydown", (e) => {
             switchMode("ctf");
             break;
         default: {
-            const key = e.key.toLowerCase();
             if (key === "p") switchMode("personal");
             else if (key === "r") switchMode("research");
             else if (key === "d") switchMode("dev");

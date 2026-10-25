@@ -1,0 +1,302 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+/* Mode console */
+.console-strip {
+  display: none;
+}
+
+.console-rail {
+  display: none;
+}
+
+.quote-card {
+  display: none;
+}
+
+@include media-sm {
+  .quote-card {
+    display: block;
+    max-width: 46rem;
+    min-height: 3.5rem;
+    margin: 0.8rem 0 0;
+  }
+  
+  .console-strip {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: $space-md;
+    align-items: stretch;
+    min-height: 8.75rem;
+  }
+}
+
+@include media-xl {
+  .content {
+    display: grid;
+    grid-template-columns: minmax(10rem, 18rem) 48rem minmax(10rem, 18rem);
+    gap: $space-2xl;
+    justify-content: center;
+    align-content: center;
+    align-items: start;
+  }
+  
+  .content > main {
+    grid-column: 2;
+    padding-top: 0;
+  }
+  
+  .console-strip {
+    display: none;
+  }
+  
+  .console-rail {
+    display: flex;
+    flex-direction: column;
+    gap: $space-md;
+    width: 100%;
+    max-width: 18rem;
+    min-width: 0;
+  }
+  
+  #console-left {
+    grid-column: 1;
+    justify-self: end;
+  }
+  
+  #console-right {
+    grid-column: 3;
+    justify-self: start;
+  }
+}
+
+.console-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid $border-secondary;
+  border-radius: $radius-xl;
+  background: rgba($bg-secondary, 0.55);
+  @include transition(border-color);
+}
+
+.console-card:hover {
+  border-color: $border-primary;
+}
+
+.console-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  color: $text-tertiary;
+}
+
+.console-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--accent);
+}
+
+.console-sub {
+  font-size: 0.68rem;
+  line-height: 1.45;
+  color: $text-tertiary;
+  word-break: break-word;
+}
+
+.console-mono {
+  font-family: inherit;
+  font-size: 0.68rem;
+  line-height: 1.45;
+  color: $text-secondary;
+  word-break: break-all;
+  text-align: left;
+}
+
+.console-input {
+  width: 100%;
+  min-width: 0;
+  padding: 0.3rem $space-sm;
+  border: 1px solid $border-primary;
+  border-radius: $radius-md;
+  background: $bg-primary;
+  color: $text-primary;
+  font-family: inherit;
+  font-size: 0.72rem;
+}
+
+.console-input:focus {
+  @include focus-ring(var(--accent-rgb), 0.15);
+}
+
+.console-input::placeholder {
+  color: $text-muted;
+}
+
+.console-textarea {
+  resize: none;
+  min-height: 2.3rem;
+}
+
+.console-input[type="datetime-local"] {
+  color-scheme: dark;
+}
+
+.console-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-xs;
+}
+
+.console-btn {
+  padding: 0.18rem 0.45rem;
+  border: 1px solid $border-primary;
+  border-radius: $radius-md;
+  background: transparent;
+  color: $text-secondary;
+  font-family: inherit;
+  font-size: 0.65rem;
+  line-height: 1.4;
+  cursor: pointer;
+  @include transition(color, border-color);
+}
+
+.console-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.console-bar {
+  height: 4px;
+  border-radius: $radius-full;
+  background: $border-secondary;
+  overflow: hidden;
+}
+
+.console-bar > span {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: var(--accent);
+  transition: width 0.4s ease;
+}
+
+.console-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-xs;
+}
+
+.console-chip {
+  max-width: 100%;
+  padding: 0.15rem 0.45rem;
+  border: 1px solid $border-primary;
+  border-radius: $radius-full;
+  background: transparent;
+  color: $text-secondary;
+  font-family: inherit;
+  font-size: 0.65rem;
+  line-height: 1.4;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  @include transition(color, border-color);
+}
+
+.console-chip:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.console-out {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.console-out:hover {
+  color: var(--accent);
+}
+
+.console-keys,
+.console-formats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+  font-size: 0.68rem;
+  line-height: 1.45;
+  color: $text-secondary;
+}
+
+.console-keys kbd,
+.console-formats code {
+  padding: 0 0.25rem;
+  border: 1px solid $border-primary;
+  border-radius: 0.2rem;
+  color: $text-primary;
+  font-family: inherit;
+  font-size: 0.65rem;
+}
+
+/* Anime quote feed */
+.quote-card {
+  margin: 0;
+  padding-left: 0.9rem;
+  border-left: 2px solid rgba(var(--accent-rgb), 0.5);
+  @include transition(opacity);
+  margin-top: 11px;
+}
+
+.quote-card.fading {
+  opacity: 0;
+}
+
+.quote-card blockquote {
+  margin: 0;
+  font-size: 0.82rem;
+  font-style: italic;
+  line-height: 1.55;
+  color: $text-primary;
+}
+
+.quote-card figcaption {
+  margin-top: $space-xs;
+  font-size: 0.68rem;
+  color: $text-tertiary;
+}
+
+.quote-card figcaption::before {
+  content: "— ";
+}
+
+/* Research dork chips */
+#dork-bar {
+  display: none;
+  flex-wrap: wrap;
+  gap: $space-sm;
+}
+
+#dork-bar.visible {
+  display: flex;
+}
+
+.dork-chip {
+  padding: 0.25rem 0.625rem;
+  font-size: 0.75rem;
+  border: 1px solid $border-primary;
+  border-radius: $radius-md;
+  color: $text-secondary;
+  @include transition(all);
+}
+
+.dork-chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(var(--accent-rgb), 0.08);
+}

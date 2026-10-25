@@ -1,0 +1,55 @@
+@use 'sass:list';
+@use 'variables' as *;
+
+@mixin transition($props...) {
+  $result: ();
+  @each $prop in $props {
+    $result: list.append($result, $prop 0.15s ease, comma);
+  }
+  transition: $result;
+}
+
+// --accent-rgb holds a comma-separated triplet (e.g. "63, 185, 80"), which is
+// what rgba() needs. Passing --accent (a hex value) produced invalid CSS.
+@mixin focus-ring($rgb: var(--accent-rgb), $opacity: 0.2) {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px rgba($rgb, $opacity);
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin media-sm {
+  @media (min-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
+@mixin media-md {
+  @media (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin media-lg {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin media-xl {
+  @media (min-width: $breakpoint-xl) {
+    @content;
+  }
+}

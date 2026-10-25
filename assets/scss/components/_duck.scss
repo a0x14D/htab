@@ -1,0 +1,108 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+/* Floating Duck.ai launcher */
+.duck-btn {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.65rem $space-lg;
+  min-height: 2.75rem;
+  background: linear-gradient(180deg, rgba(var(--accent-rgb), 0.22), rgba(var(--accent-rgb), 0.1));
+  border: 1px solid var(--accent);
+  border-radius: $radius-full;
+  color: var(--accent);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  font-family: inherit;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 0 1px rgba(var(--accent-rgb), 0.15),
+              0 6px 22px -8px rgba(var(--accent-rgb), 0.7);
+  @include transition(border-color, color, box-shadow, transform, opacity, translate);
+  animation: duck-attract 2.6s ease-in-out 3;
+}
+
+.duck-btn:hover,
+.duck-btn:focus-visible {
+  border-color: var(--accent);
+  color: $bg-primary;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.25),
+              0 8px 28px -8px rgba(var(--accent-rgb), 0.9);
+  outline: none;
+  transform: translateY(-2px);
+  animation: none;
+}
+
+.duck-btn:active {
+  transform: translateY(0) scale(0.97);
+}
+
+.duck-emoji {
+  font-size: 1.15rem;
+  line-height: 1;
+  @include transition(transform);
+  animation: duck-bob 2.6s ease-in-out 3;
+}
+
+.duck-btn:hover .duck-emoji,
+.duck-btn:focus-visible .duck-emoji {
+  transform: rotate(-14deg) scale(1.2);
+  animation: none;
+}
+
+.duck-label {
+  white-space: nowrap;
+}
+
+/* Gentle nudge */
+@keyframes duck-attract {
+  0%, 100% { transform: translateY(0); }
+  8%       { transform: translateY(-6px); }
+  16%      { transform: translateY(0); }
+  24%      { transform: translateY(-4px); }
+  32%      { transform: translateY(0); }
+}
+
+@keyframes duck-bob {
+  0%, 100% { transform: rotate(0deg); }
+  8%       { transform: rotate(-16deg); }
+  16%      { transform: rotate(12deg); }
+  24%      { transform: rotate(-8deg); }
+  32%      { transform: rotate(0deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .duck-btn, .duck-emoji {
+    animation: none;
+  }
+}
+
+body.no-fx .duck-btn,
+body.no-fx .duck-emoji {
+  animation: none;
+}
+
+@media (max-width: 380px) {
+  .duck-label {
+    display: none;
+  }
+  .duck-btn {
+    padding: 0.75rem;
+    min-width: 2.75rem;
+    justify-content: center;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .duck-btn {
+    bottom: $space-lg;
+    right: $space-lg;
+  }
+}
