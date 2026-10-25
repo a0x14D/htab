@@ -1399,7 +1399,7 @@ function runCommand(name, args) {
 
         case "help": {
             showToast(
-                ":mode :order :reset-order :pin :unpin :pins :link :todo :note :clear-history :theme :help :reload"
+                ":mode :order :reset-order :pin :unpin :pins :link :todo :note :clear-history :theme :help :reload | Keys: 1-4 / ? n t m s q g x"
             );
             return;
         }
@@ -2454,20 +2454,20 @@ window.addEventListener("keydown", (e) => {
     if (key === "g") {
         e.preventDefault();
         openLink("https://github.com/a0x14D/htab");
-        showToast("Opening GitHub...");
+        showToast("g · Open repo");
         return;
     }
 
     if (key === "x") {
         e.preventDefault();
         openLink("https://github.com/a0x14D/htab/stargazers");
-        showToast("Star on GitHub");
+        showToast("x · Star repo");
         return;
     }
 
     if (key === "?") {
         e.preventDefault();
-        showToast(":mode :order :reset-order :pin :unpin :pins :link :todo :note :clear-history :theme :help :reload");
+        showToast("Keys: 1-4 modes · / search · ? help · n notes · t todos · m notes · q duck.ai · s order · g github · x star repo");
         return;
     }
 
