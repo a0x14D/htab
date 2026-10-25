@@ -2415,13 +2415,29 @@ window.addEventListener("keydown", (e) => {
         return;
     }
 
-    if (e.key.toLowerCase() === "n") {
+    const key = e.key.toLowerCase();
+
+    if (key === "n") {
         e.preventDefault();
         toggleScratchpad();
         return;
     }
 
-    if (e.key.toLowerCase() === "s") {
+    if (key === "t") {
+        e.preventDefault();
+        toggleScratchpad();
+        setScratchpadTab("todos");
+        return;
+    }
+
+    if (key === "m") {
+        e.preventDefault();
+        toggleScratchpad();
+        setScratchpadTab("notes");
+        return;
+    }
+
+    if (key === "s") {
         e.preventDefault();
         setTileOrder(tileOrder === "frecency" ? "default" : "frecency");
         renderLinks();
@@ -2429,9 +2445,23 @@ window.addEventListener("keydown", (e) => {
         return;
     }
 
-    if (e.key.toLowerCase() === "q") {
+    if (key === "q") {
         e.preventDefault();
         openDuckAi();
+        return;
+    }
+
+    if (key === "g") {
+        e.preventDefault();
+        openLink("https://github.com/a0x14D/htab");
+        showToast("Opening GitHub...");
+        return;
+    }
+
+    if (key === "x") {
+        e.preventDefault();
+        openLink("https://github.com/a0x14D/htab/stargazers");
+        showToast("Star on GitHub");
         return;
     }
 
@@ -2449,7 +2479,6 @@ window.addEventListener("keydown", (e) => {
             switchMode("ctf");
             break;
         default: {
-            const key = e.key.toLowerCase();
             if (key === "p") switchMode("personal");
             else if (key === "r") switchMode("research");
             else if (key === "d") switchMode("dev");
