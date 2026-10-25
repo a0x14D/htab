@@ -18,7 +18,7 @@
     <header class="flex flex-wrap justify-between items-center gap-3 border-b border-gray-800 pb-4">
         <div class="min-w-0">
             <h1 class="text-lg sm:text-xl font-bold accent-text terminal-glow truncate">&gt; root@firefox-newtab:~#</h1>
-            <p class="text-xs text-gray-500 mt-1 hidden sm:block">
+            <p class="text-xs text-gray-400 mt-1 hidden sm:block">
                 SECURE_SESSION // PROFILE_ACCESS:
                 <span id="current-mode-label" class="accent-text font-bold">PERSONAL</span>
             </p>
@@ -87,13 +87,13 @@
         <!-- Per-mode scratchpad: todo list + raw notes -->
         <section id="scratchpad" class="scratchpad hidden">
             <div class="flex items-center justify-between mb-2">
-                <h2 class="text-xs text-gray-500">// SCRATCHPAD · <span id="scratchpad-mode" class="accent-text">PERSONAL</span></h2>
+                <h2 class="text-xs text-gray-400">// SCRATCHPAD · <span id="scratchpad-mode" class="accent-text">PERSONAL</span></h2>
                 <div class="flex items-center gap-3">
                     <div id="scratchpad-tabs" role="tablist" class="flex items-center gap-1 text-xs">
                         <button id="tab-todos" type="button" role="tab" class="scratchpad-tab" aria-selected="true">checklist</button>
                         <button id="tab-notes" type="button" role="tab" class="scratchpad-tab" aria-selected="false">notes</button>
                     </div>
-                    <button id="scratchpad-close" type="button" class="text-xs text-gray-500 hover:text-gray-300 transition">close (esc)</button>
+                    <button id="scratchpad-close" type="button" class="text-xs text-gray-400 hover:text-gray-200 transition">close (esc)</button>
                 </div>
             </div>
 
@@ -105,9 +105,9 @@
                            class="todo-input w-full">
                     <button id="todo-add" type="button" class="todo-add" aria-label="Add task">+</button>
                 </div>
-                <div id="todo-progress" class="text-[11px] text-gray-500 mt-2 mb-2"></div>
+                <div id="todo-progress" class="text-[11px] text-gray-400 mt-2 mb-2"></div>
                 <ul id="todo-list" class="todo-list"></ul>
-                <p id="todo-empty" class="text-xs text-gray-600 hidden">No tasks yet — add one above.</p>
+                <p id="todo-empty" class="text-xs text-gray-400 hidden">No tasks yet — add one above.</p>
             </div>
 
             <div id="scratchpad-notes" role="tabpanel" class="hidden">
@@ -127,9 +127,9 @@
     </div>
 
     <!-- Footer -->
-    <footer class="text-center text-xs text-gray-400 pt-4">
-        <span class="accent-text">SECURE_PROFILE</span> // <span class="text-gray-200">ONLINE</span> // <span id="clock" class="text-gray-300">--:--:--</span>
-        <span class="hidden sm:inline">// <span class="text-gray-300">1-4</span> modes · <span class="text-gray-300">/</span> search · <span class="text-gray-300">?</span> help · <span class="text-gray-300">n</span> notes · <span class="text-gray-300">t</span> todos · <span class="text-gray-300">m</span> notes · <span class="text-gray-300">q</span> duck.ai · <span class="text-gray-300">g</span> github · <span class="text-gray-300">x</span> star repo</span>
+    <footer class="text-center text-xs text-gray-300 pt-4">
+        <span class="accent-text">SECURE_PROFILE</span> // <span class="text-gray-100">ONLINE</span> // <span id="clock" class="text-gray-200">--:--:--</span>
+        <span class="hidden sm:inline">// <span class="text-gray-200">1-4</span> modes · <span class="text-gray-200">/</span> search · <span class="text-gray-200">:</span> commands · <span class="text-gray-200">n</span> notes · <span class="text-gray-200">q</span> duck.ai</span>
     </footer>
 
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
