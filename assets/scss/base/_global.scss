@@ -7,13 +7,13 @@
 
 body {
   font-family: $font-mono;
-  background-color: $bg-primary;
+  background-color: #050810;
   color: $text-primary;
   background-image:
-    radial-gradient(ellipse at 50% 0%, rgba(var(--accent-rgb), 0.28), transparent 58%),
-    radial-gradient(circle at 50% 100%, rgba(var(--accent-rgb), 0.14), transparent 72%),
-    linear-gradient(rgba(var(--accent-rgb), 0.14) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(var(--accent-rgb), 0.14) 1px, transparent 1px);
+    radial-gradient(ellipse 120% 80% at 50% 0%, rgba(var(--accent-rgb), 0.35), transparent 65%),
+    radial-gradient(ellipse 80% 40% at 50% 100%, rgba(var(--accent-rgb), 0.18), transparent 70%),
+    linear-gradient(rgba(var(--accent-rgb), 0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--accent-rgb), 0.18) 1px, transparent 1px);
   background-size: 100% 100%, 100% 100%, 44px 44px, 44px 44px;
   background-position: 0 0, 0 0, 0 0, 0 0;
   background-attachment: fixed, fixed, fixed, fixed;
